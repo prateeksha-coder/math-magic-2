@@ -1,12 +1,15 @@
-from math import sqrt
-number=int(input("Enter your number \n"))
-if number>1:
-  for i in range(2,int(sqrt(number))+1):
-    if(number%i==0):
-      print(number, " is not prime")
-      break
-  else:    
-    print(number, " is prime")
+number=int(input("Enter a number: "))
+
+original_number=number
+reversed_number=0
+
+while number>0:
+    digit=number%10
+    reversed_number=reversed_number*10+digit
+    number//=10
+
+if original_number==reversed_number:
+    print(f"{original_number} is a palindrome")
 else:
-  print(number, "is not prime")
-  
+    print(f"{original_number} is a not palindrome")
+
